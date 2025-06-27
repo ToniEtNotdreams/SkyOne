@@ -1,31 +1,25 @@
-const toggleThemeBtn = document.getElementById('toggleTheme');
-toggleThemeBtn.addEventListener('click', () => {
-  const html = document.documentElement;
-  if (html.getAttribute('data-theme') === 'dark') {
-    html.setAttribute('data-theme', 'light');
-    toggleThemeBtn.textContent = '🌙';
+// Appliquer le thème au chargement selon la préférence système
+function applySystemTheme() {
+  if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+    document.documentElement.setAttribute('data-theme', 'dark');
+    toggleThemeButton.textContent = '☀️'; // icône soleil pour passer au clair
   } else {
-    html.setAttribute('data-theme', 'dark');
-    toggleThemeBtn.textContent = '☀️';
+    document.documentElement.setAttribute('data-theme', 'light');
+    toggleThemeButton.textContent = '🌙'; // icône lune pour passer au sombre
+  }
+}
+
+const toggleThemeButton = document.getElementById('toggleTheme');
+
+applySystemTheme();
+
+toggleThemeButton.addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  if (currentTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    toggleThemeButton.textContent = '🌙';
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    toggleThemeButton.textContent = '☀️';
   }
 });
-
-const copyIPBtn = document.getElementById('copyIP');
-if(copyIPBtn) {
-  copyIPBtn.addEventListener('click', () => {
-    const ip = copyIPBtn.getAttribute('data-ip');
-    navigator.clipboard.writeText(ip).then(() => {
-      copyIPBtn.textContent = 'IP Copiée !';
-      setTimeout(() => {
-        copyIPBtn.textContent = 'Copier l’IP';
-      }, 2000);
-    });
-  });
-}
-
-const connectBedrockBtn = document.getElementById('connectBedrock');
-if(connectBedrockBtn) {
-  connectBedrockBtn.addEventListener('click', () => {
-    alert('Pour se connecter à Bedrock, utilisez l\'IP : bedrock.skyone.com');
-  });
-}
