@@ -2,62 +2,32 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SkyOne - Serveur Minecraft</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * {margin:0; padding:0; box-sizing: border-box;}
-    body {font-family: 'Roboto', sans-serif; color: #fff; background: #111;}
-    header {background: #222; padding: 20px; display: flex; justify-content: space-between; align-items: center;}
-    header h1 {color: #00e0ff;}
-    nav a {color: #fff; text-decoration: none; margin-left: 20px; transition: 0.3s;}
-    nav a:hover {color: #00e0ff;}
-    section {padding: 100px 20px; text-align: center;}
-    #accueil {background: url('background.jpg') no-repeat center/cover; height: 100vh; display: flex; flex-direction: column; justify-content: center;}
-    #accueil h2 {font-size: 50px; margin-bottom: 20px;}
-    #accueil p {font-size: 20px;}
-    .btn {margin-top: 20px; padding: 15px 30px; background: #00e0ff; color: #111; border: none; border-radius: 10px; text-decoration: none; font-weight: bold; transition: 0.3s;}
-    .btn:hover {background: #00bcd4;}
-    footer {background: #222; text-align: center; padding: 15px;}
-  </style>
+  <title>SkyOne - Accueil</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
   <h1>SkyOne</h1>
   <nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#reseaux">Réseaux</a>
-    <a href="#jouer">Jouer</a>
+    <a href="index.html">Accueil</a>
+    <a href="reseaux.html">Réseaux</a>
+    <a href="jouer.html">Jouer</a>
   </nav>
 </header>
 
-<section id="accueil">
-  <h2>Bienvenue sur SkyOne</h2>
-  <p>Le serveur Minecraft survie & mini-jeux ultime !</p>
-  <a href="#jouer" class="btn">Rejoindre</a>
-</section>
-
-<section id="reseaux" style="background: #1a1a1a;">
-  <h2>Nos Réseaux</h2>
-  <p>Suis-nous pour ne rien manquer :</p>
-  <p>
-    <a href="https://discord.gg/tonserveur" class="btn">Discord</a>
-    <a href="https://www.youtube.com/" class="btn">YouTube</a>
-    <a href="https://www.instagram.com/" class="btn">Instagram</a>
-  </p>
-</section>
-
-<section id="jouer" style="background: #222;">
-  <h2>Comment Jouer ?</h2>
-  <p>Version : 1.21.4+ Java</p>
-  <p>IP du serveur : <strong>play.skyone.fr</strong></p>
-  <a href="minecraft://play.skyone.fr" class="btn">Se connecter</a>
-</section>
+<main>
+  <section>
+    <h2>Bienvenue sur SkyOne</h2>
+    <p>Serveur Minecraft survie & mini-jeux.</p>
+    <a href="jouer.html" class="btn">Rejoindre</a>
+  </section>
+</main>
 
 <footer>
-  &copy; 2025 SkyOne - Tous droits réservés.
+  &copy; 2025 SkyOne
 </footer>
 
+<script src="app.js"></script>
 </body>
 </html>
