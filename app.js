@@ -1,4 +1,3 @@
-// Toggle mode sombre / clair
 const toggleThemeBtn = document.getElementById('toggleTheme');
 toggleThemeBtn.addEventListener('click', () => {
   const html = document.documentElement;
@@ -11,20 +10,22 @@ toggleThemeBtn.addEventListener('click', () => {
   }
 });
 
-// Copier IP au clic
 const copyIPBtn = document.getElementById('copyIP');
-copyIPBtn.addEventListener('click', () => {
-  const ip = copyIPBtn.getAttribute('data-ip');
-  navigator.clipboard.writeText(ip).then(() => {
-    copyIPBtn.textContent = 'IP Copiée !';
-    setTimeout(() => {
-      copyIPBtn.textContent = 'Copier l’IP';
-    }, 2000);
+if(copyIPBtn) {
+  copyIPBtn.addEventListener('click', () => {
+    const ip = copyIPBtn.getAttribute('data-ip');
+    navigator.clipboard.writeText(ip).then(() => {
+      copyIPBtn.textContent = 'IP Copiée !';
+      setTimeout(() => {
+        copyIPBtn.textContent = 'Copier l’IP';
+      }, 2000);
+    });
   });
-});
+}
 
-// Connecter à Bedrock bouton
 const connectBedrockBtn = document.getElementById('connectBedrock');
-connectBedrockBtn.addEventListener('click', () => {
-  alert('Pour se connecter à Bedrock, utilisez l\'IP : bedrock.skyone.com');
-});
+if(connectBedrockBtn) {
+  connectBedrockBtn.addEventListener('click', () => {
+    alert('Pour se connecter à Bedrock, utilisez l\'IP : bedrock.skyone.com');
+  });
+}
