@@ -216,3 +216,48 @@ main {
   transform: translateY(-2px);
 }
 
+.reseaux {
+  text-align: center;
+  padding: 80px 20px 20px;
+}
+
+.reseaux h1 {
+  margin-bottom: 40px;
+  font-size: 3rem;
+}
+
+.reseaux-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.reseau-card {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  width: 130px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.reseau-card:hover {
+  background-color: var(--button-hover-bg);
+  transform: translateY(-4px);
+}
+
+.reseau-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 12px;
+}
+
+.reseau-card p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
