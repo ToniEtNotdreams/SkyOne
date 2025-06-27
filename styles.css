@@ -252,9 +252,11 @@ main {
 
 .reseau-card img {
   width: 60px;
-  height: 60px;
+  aspect-ratio: 1;
+  object-fit: contain;
   margin-bottom: 12px;
 }
+
 
 .reseau-card p {
   margin: 0;
