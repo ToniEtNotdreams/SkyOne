@@ -49,8 +49,6 @@ body {
   color: var(--text-color);
 }
 
-
-
 header {
   position: fixed;
   top: 0;
@@ -74,6 +72,8 @@ header {
   margin: 0 auto;
   position: relative;
   gap: 40px;
+  flex-wrap: wrap;
+  padding: 0 10px;
 }
 
 .logo {
@@ -83,20 +83,23 @@ header {
 }
 
 .logo img {
-  height: 55px;
+  height: 40px;
+  cursor: pointer;
 }
 
 nav {
   display: flex;
-  gap: 30px;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 nav a {
   color: var(--nav-text);
   text-decoration: none;
   font-weight: 600;
-  font-size: 30px;
-  padding: 8px 12px;
+  font-size: 20px;
+  padding: 6px 10px;
   border-radius: 6px;
   transition: background-color 0.3s;
 }
@@ -110,16 +113,17 @@ nav a:hover {
   right: 20px;
 }
 
-#toggleTheme {
+.right-controls button {
   background: none;
   border: none;
   color: var(--nav-text);
-  font-size: 24px;
+  font-size: 20px;
+  padding: 4px 8px;
   cursor: pointer;
 }
 
 main {
-  padding-top: 60px;
+  padding: 70px 10px 20px;
 }
 
 .home-main {
@@ -131,98 +135,39 @@ main {
   align-items: center;
   color: white;
   text-shadow: 0 0 8px black;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   user-select: none;
-}
-
-.buttons-container {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-
-.buttons-container button {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  border: none;
-  padding: 12px 24px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,204,255,0.6);
-  transition: background-color 0.3s;
-  min-width: 120px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.buttons-container button:hover {
-  background-color: var(--button-hover-bg);
-}
-
-/* Conteneur header : passe en colonne sur petits écrans */
-.header-container {
-  flex-wrap: wrap;
-  padding: 0 10px;
-}
-
-/* Navigation responsive : empile les liens verticalement sur mobile */
-nav {
-  gap: 15px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* Nav liens plus petits sur petits écrans */
-nav a {
-  font-size: 20px;
-  padding: 6px 10px;
-}
-
-/* Logo réduit sur petits écrans */
-.logo img {
-  height: 40px;
-}
-
-/* Bouton toggle plus petit sur mobile */
-.right-controls button {
-  font-size: 20px;
-  padding: 4px 8px;
-}
-
-/* Main padding adaptatif */
-main {
-  padding: 70px 10px 20px;
-}
-
-/* Pour la page accueil avec texte centré et fond, adapte la taille du texte */
-.home-main {
-  font-size: 2rem;
-  padding: 0 10px;
   text-align: center;
   min-height: calc(100vh - 60px);
 }
 
-/* Conteneur boutons empilé verticalement sur mobile */
 .buttons-container {
-  flex-direction: column;
-  gap: 15px;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
   align-items: center;
 }
 
-/* Boutons adaptatifs en largeur */
-.buttons-container button {
-  width: 90vw;
-  max-width: 300px;
+.buttons-container a {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-/* Media queries pour écrans larges : au-dessus de 600px */
+.buttons-container a img {
+  height: 60px;
+  width: 60px;
+  object-fit: contain;
+  user-select: none;
+}
+
+.buttons-container a:hover img {
+  transform: scale(1.1);
+}
+
 @media (min-width: 600px) {
   nav a {
     font-size: 30px;
@@ -231,15 +176,18 @@ main {
   .logo img {
     height: 55px;
   }
-  .buttons-container {
-    flex-direction: row;
-    width: auto;
+}
+
+@media (max-width: 480px) {
+  nav a {
+    font-size: 16px;
+    padding: 5px 8px;
   }
-  .buttons-container button {
-    width: auto;
-    min-width: 120px;
+  .logo img {
+    height: 35px;
   }
-  .home-main {
-    font-size: 3rem;
+  .buttons-container a img {
+    height: 50px;
+    width: 50px;
   }
 }
