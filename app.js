@@ -1,21 +1,20 @@
-// Appliquer le thème au chargement selon la préférence système
+const toggleThemeButton = document.getElementById('toggleTheme');
+
 function applySystemTheme() {
-  if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+  if(window.matchMedia('(prefers-color-scheme: dark)').matches){
     document.documentElement.setAttribute('data-theme', 'dark');
-    toggleThemeButton.textContent = '☀️'; // icône soleil pour passer au clair
+    toggleThemeButton.textContent = '☀️'; 
   } else {
     document.documentElement.setAttribute('data-theme', 'light');
-    toggleThemeButton.textContent = '🌙'; // icône lune pour passer au sombre
+    toggleThemeButton.textContent = '🌙'; 
   }
 }
-
-const toggleThemeButton = document.getElementById('toggleTheme');
 
 applySystemTheme();
 
 toggleThemeButton.addEventListener('click', () => {
-  const currentTheme = document.documentElement.getAttribute('data-theme');
-  if (currentTheme === 'dark') {
+  const current = document.documentElement.getAttribute('data-theme');
+  if(current === 'dark') {
     document.documentElement.setAttribute('data-theme', 'light');
     toggleThemeButton.textContent = '🌙';
   } else {
