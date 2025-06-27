@@ -2,8 +2,8 @@
 <html lang="fr" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <title>SkyOne | Réseaux</title>
-  <link rel="icon" href="images/logo-32x.png" type="image/png" />
+  <title>SkyOne | Jouer</title>
+  <link rel="icon" type="image/png" href="images/logo-32x.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -15,7 +15,6 @@
         <img src="images/skyone-logo.png" alt="SkyOne Logo" height="55" />
       </a>
     </div>
-
 
     <nav>
       <a href="index.html">Accueil</a>
@@ -29,26 +28,27 @@
   </div>
 </header>
 
+<main>
+  <section class="jouer">
+    <h1>Rejoins SkyOne !</h1>
+    <p style="text-align:center; margin: 20px 0; font-size: 1.1rem;">
+      Serveur disponible uniquement sur <strong>Java Edition 1.21.4+</strong><br>
+      IP : <strong>play.skyonefr.fr</strong>
+    </p>
 
-<main style="padding-top: 60px; text-align: center;">
-  <h1>Nos Réseaux</h1>
-  <div class="buttons-container">
-    <a href="https://discord.gg/ThNb2mKz9C" target="_blank" rel="noopener noreferrer" aria-label="Discord">
-      <img src="images/discord.png" alt="Discord" />
-    </a>
-    <a href="https://www.youtube.com/@tonietnotdreams" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-      <img src="images/youtube.png" alt="YouTube" />
-    </a>
-    <a href="https://linktr.ee/ToniEtNotdreams" target="_blank" rel="noopener noreferrer" aria-label="Linktr.ee">
-      <img src="images/linktree.png" alt="Linktr.ee" />
-    </a>
-    <a href="https://www.twitch.tv/tonietnotdreams" target="_blank" rel="noopener noreferrer" aria-label="Twitch">
-      <img src="images/twitch.png" alt="Twitch" />
-  </a>
-</div>
+    <div class="buttons-container">
+      <button onclick="window.location.href='minecraft://?addExternalServer=SkyOne|play.skyonefr.fr';" aria-label="Jouer sur SkyOne">
+        📥 Rejoindre le serveur
+      </button>
 
+      <button id="copyIP" data-ip="play.skyonefr.fr" aria-label="Copier l’adresse IP">
+        📋 Copier l’IP
+      </button>
+    </div>
+  </section>
 </main>
 
 <script src="app.js"></script>
+
 </body>
 </html>
