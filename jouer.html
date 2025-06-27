@@ -1,34 +1,42 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <title>SkyOne - Jouer</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <title>SkyOne | Jouer</title>
+  <link rel="icon" type="image/png" href="images/logo-32x.png" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <header>
-  <h1>SkyOne</h1>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="reseaux.html">Réseaux</a>
-    <a href="jouer.html">Jouer</a>
-  </nav>
+  <div class="header-container">
+    <div class="logo">
+      <img src="images/syone-logo.png" alt="SkyOne Logo" />
+    </div>
+
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="reseaux.html">Réseaux</a>
+      <a href="jouer.html">Jouer</a>
+    </nav>
+
+    <div class="right-controls">
+      <button id="toggleTheme" aria-label="Changer thème">🌙</button>
+    </div>
+  </div>
 </header>
 
 <main>
-  <section>
-    <h2>Comment Jouer ?</h2>
-    <p>Version : 1.21.4+ Java</p>
-    <p>IP : <strong>play.skyone.fr</strong></p>
-    <a href="minecraft://play.skyone.fr" class="btn">Se connecter</a>
+  <section class="jouer">
+    <h1>Jouer sur SkyOne</h1>
+    <div class="buttons-container">
+      <button id="connectBedrock">Connecter avec Bedrock</button>
+      <button id="copyIP" data-ip="bedrock.skyone.com">Copier l’IP</button>
+    </div>
   </section>
 </main>
 
-<footer>
-  &copy; 2025 SkyOne
-</footer>
-
 <script src="app.js"></script>
+
 </body>
 </html>
