@@ -165,3 +165,81 @@ main {
 .buttons-container button:hover {
   background-color: var(--button-hover-bg);
 }
+
+/* Conteneur header : passe en colonne sur petits écrans */
+.header-container {
+  flex-wrap: wrap;
+  padding: 0 10px;
+}
+
+/* Navigation responsive : empile les liens verticalement sur mobile */
+nav {
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Nav liens plus petits sur petits écrans */
+nav a {
+  font-size: 20px;
+  padding: 6px 10px;
+}
+
+/* Logo réduit sur petits écrans */
+.logo img {
+  height: 40px;
+}
+
+/* Bouton toggle plus petit sur mobile */
+.right-controls button {
+  font-size: 20px;
+  padding: 4px 8px;
+}
+
+/* Main padding adaptatif */
+main {
+  padding: 70px 10px 20px;
+}
+
+/* Pour la page accueil avec texte centré et fond, adapte la taille du texte */
+.home-main {
+  font-size: 2rem;
+  padding: 0 10px;
+  text-align: center;
+  min-height: calc(100vh - 60px);
+}
+
+/* Conteneur boutons empilé verticalement sur mobile */
+.buttons-container {
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Boutons adaptatifs en largeur */
+.buttons-container button {
+  width: 90vw;
+  max-width: 300px;
+}
+
+/* Media queries pour écrans larges : au-dessus de 600px */
+@media (min-width: 600px) {
+  nav a {
+    font-size: 30px;
+    padding: 8px 12px;
+  }
+  .logo img {
+    height: 55px;
+  }
+  .buttons-container {
+    flex-direction: row;
+    width: auto;
+  }
+  .buttons-container button {
+    width: auto;
+    min-width: 120px;
+  }
+  .home-main {
+    font-size: 3rem;
+  }
+}
