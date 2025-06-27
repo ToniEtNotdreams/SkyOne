@@ -90,25 +90,28 @@ nav a:hover {
   cursor: pointer;
 }
 
-main {
-  padding-top: 60px; /* hauteur header */
-  min-height: calc(100vh - 60px);
+/* Page Accueil : fond image + texte centré */
+.home-main {
+  margin-top: 60px;
+  height: calc(100vh - 60px);
+  background: url('images/screenshot.png') no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 20px;
-}
-
-.jouer h1 {
+  color: white;
+  text-shadow: 0 0 8px black;
   font-size: 3rem;
-  margin-bottom: 40px;
+  font-weight: 700;
+  user-select: none;
 }
 
+/* Boutons de la page Réseaux corrigés */
 .buttons-container {
   display: flex;
   gap: 20px;
   justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
 }
 
 .buttons-container button {
@@ -122,6 +125,11 @@ main {
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0,204,255,0.6);
   transition: background-color 0.3s;
+  min-width: 120px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .buttons-container button:hover {
