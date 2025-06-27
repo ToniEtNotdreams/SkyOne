@@ -47,8 +47,13 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
+  transition: none;
+}
+
+body.theme-loaded {
   transition: background-color 0.3s, color 0.3s;
 }
+
 
 header {
   position: fixed;
