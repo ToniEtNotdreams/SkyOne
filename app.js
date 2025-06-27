@@ -22,3 +22,10 @@ toggleThemeButton.addEventListener('click', () => {
     toggleThemeButton.textContent = '☀️';
   }
 });
+
+document.getElementById('copyIP').addEventListener('click', function() {
+  const ip = this.getAttribute('data-ip');
+  navigator.clipboard.writeText(ip).then(() => {
+    alert("IP copiée : " + ip);
+  });
+});
