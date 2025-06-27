@@ -30,20 +30,20 @@
 
 <main>
   <section class="jouer">
-    <h1>Jouer sur SkyOne</h1>
-    <p style="text-align: center; margin-top: 10px;">
-      Rejoignez notre serveur facilement selon votre plateforme :
+    <h1>Rejoins SkyOne !</h1>
+    <p style="text-align:center; margin: 20px 0; font-size: 1.1rem;">
+      Serveur disponible uniquement sur <strong>Java Edition 1.21.4+</strong><br>
+      IP : <strong>play.skyonefr.fr</strong>
     </p>
 
     <div class="buttons-container">
-      <div>
-        <button id="connectBedrock" aria-label="Connecter depuis Bedrock">Connecter avec Bedrock</button>
-        <small style="display: block; text-align: center; margin-top: 5px;">Accédez via votre édition Bedrock</small>
-      </div>
-      <div>
-        <button id="copyIP" data-ip="bedrock.skyone.com" aria-label="Copier l’adresse IP">Copier l’IP</button>
-        <small style="display: block; text-align: center; margin-top: 5px;">bedrock.skyone.com</small>
-      </div>
+      <button onclick="window.location.href='minecraft://?addExternalServer=SkyOne|play.skyonefr.fr';" aria-label="Jouer sur SkyOne">
+        📥 Rejoindre le serveur
+      </button>
+
+      <button id="copyIP" data-ip="play.skyonefr.fr" aria-label="Copier l’adresse IP">
+        📋 Copier l’IP
+      </button>
     </div>
   </section>
 </main>
