@@ -1,16 +1,7 @@
-/* Reset marges/padding et font */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
-}
-
 :root {
   --bg-color: #fff;
-  --text-color: #222;
-  --nav-bg: #222;
+  --text-color: #000;
+  --nav-bg: #000;
   --nav-text: #fff;
   --button-bg: #00ccff;
   --button-text: #fff;
@@ -18,13 +9,21 @@ body {
 }
 
 [data-theme="dark"] {
-  --bg-color: #121212;
-  --text-color: #eee;
-  --nav-bg: #121212;
-  --nav-text: #eee;
+  --bg-color: #000;
+  --text-color: #fff;
+  --nav-bg: #fff;
+  --nav-text: #000;
   --button-bg: #0099cc;
-  --button-text: #fff;
+  --button-text: #000;
   --button-hover-bg: #007799;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 header {
@@ -37,7 +36,7 @@ header {
   display: flex;
   align-items: center;
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 .header-container {
@@ -51,10 +50,12 @@ header {
   gap: 40px;
 }
 
-.logo img {
-  height: 40px;
+.logo {
+  font-weight: 900;
+  font-size: 1.6rem;
   position: absolute;
   left: 20px;
+  user-select: none;
 }
 
 nav {
@@ -90,18 +91,16 @@ nav a:hover {
 }
 
 main {
-  padding-top: 60px; /* = header height */
+  padding-top: 60px; /* hauteur header */
   min-height: calc(100vh - 60px);
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('images/screenshot.png') no-repeat center center / cover;
   text-align: center;
-  color: white;
-  text-shadow: 1px 1px 3px black;
+  padding: 20px;
 }
 
-.home h1 {
+.jouer h1 {
   font-size: 3rem;
   margin-bottom: 40px;
 }
