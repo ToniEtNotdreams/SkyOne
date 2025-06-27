@@ -9,15 +9,14 @@
 }
 
 [data-theme="dark"] {
-  --bg-color: #212121;    
+  --bg-color: #212121;
   --text-color: #fff;
-  --nav-bg: #181818;       
+  --nav-bg: #181818;
   --nav-text: #fff;
   --button-bg: #0099cc;
   --button-text: #fff;
   --button-hover-bg: #007799;
 }
-
 
 body {
   margin: 0;
@@ -41,7 +40,6 @@ header {
   transition: background-color 0.3s, color 0.3s;
 }
 
-
 .header-container {
   display: flex;
   justify-content: center;
@@ -54,11 +52,13 @@ header {
 }
 
 .logo {
-  font-weight: 900;
-  font-size: 1.6rem;
   position: absolute;
   left: 20px;
   user-select: none;
+}
+
+.logo img {
+  height: 55px;
 }
 
 nav {
