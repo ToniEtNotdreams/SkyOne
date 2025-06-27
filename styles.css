@@ -70,7 +70,7 @@ nav a {
   color: var(--nav-text);
   text-decoration: none;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 30px;
   padding: 8px 12px;
   border-radius: 6px;
   transition: background-color 0.3s;
@@ -93,7 +93,6 @@ nav a:hover {
   cursor: pointer;
 }
 
-/* Page Accueil : fond image + texte centré */
 .home-main {
   margin-top: 60px;
   height: calc(100vh - 60px);
@@ -108,7 +107,6 @@ nav a:hover {
   user-select: none;
 }
 
-/* Boutons de la page Réseaux corrigés */
 .buttons-container {
   display: flex;
   gap: 20px;
