@@ -2,7 +2,7 @@
 <html lang="fr" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <title>SkyOne | Jouer</title>
+  <title>SkyOne | Réseaux</title>
   <link rel="icon" type="image/png" href="images/logo-32x.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -29,21 +29,29 @@
 </header>
 
 <main>
-  <section class="jouer">
-    <h1>Rejoins SkyOne !</h1>
-    <p style="text-align:center; margin: 20px 0; font-size: 1.1rem;">
-      Serveur disponible uniquement sur <strong>Java Edition 1.21.4+</strong><br>
-      IP : <strong>play.skyonefr.fr</strong>
-    </p>
+  <section class="reseaux">
+    <h1>Nos Réseaux</h1>
 
-    <div class="buttons-container">
-      <button onclick="window.location.href='minecraft://?addExternalServer=SkyOne|play.skyonefr.fr';" aria-label="Jouer sur SkyOne">
-        📥 Rejoindre le serveur
-      </button>
+    <div class="reseaux-container">
+      <div class="reseau-card" onclick="window.open('https://discord.gg/votreinvite', '_blank')">
+        <img src="images/discord.png" alt="Discord">
+        <p>Discord</p>
+      </div>
 
-      <button id="copyIP" data-ip="play.skyonefr.fr" aria-label="Copier l’adresse IP">
-        📋 Copier l’IP
-      </button>
+      <div class="reseau-card" onclick="window.open('https://www.youtube.com/@tonietnotdreams', '_blank')">
+        <img src="images/youtube.png" alt="YouTube">
+        <p>YouTube</p>
+      </div>
+
+      <div class="reseau-card" onclick="window.open('https://www.twitch.tv/tonietnotdreams', '_blank')">
+        <img src="images/twitch.png" alt="Twitch">
+        <p>Twitch</p>
+      </div>
+
+      <div class="reseau-card" onclick="window.open('https://linktr.ee/ToniEtNotdreams', '_blank')">
+        <img src="images/linktree.png" alt="Linktree">
+        <p>Linktree</p>
+      </div>
     </div>
   </section>
 </main>
