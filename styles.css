@@ -151,19 +151,18 @@ main {
   left: 0;
   right: 0;
   height: calc(100vh - 60px);
-  background: url('images/screenshot.png') no-repeat center center/contain;
+  background: url('images/screenshot.png') no-repeat center center / cover;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* texte en haut */
+  justify-content: flex-start;
   align-items: center;
-  padding-top: 40px;
+  padding: 40px 20px 0 20px; /* padding horizontal ajouté */
   color: white;
   text-shadow: 0 0 8px black;
 
   white-space: nowrap;
   font-size: clamp(1.5rem, 6vw, 3rem);
-  max-width: 90vw;
-  margin: 0 auto;
+  max-width: 100%;
   box-sizing: border-box;
 
   font-weight: 700;
@@ -171,6 +170,7 @@ main {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 
 
 .buttons-container {
