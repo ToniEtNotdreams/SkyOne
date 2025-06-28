@@ -43,6 +43,7 @@ document.getElementById('copyIP').addEventListener('click', function() {
 const legalButton = document.getElementById('legalButton');
 if (legalButton) {
   legalButton.addEventListener('click', () => {
-    window.open('conditions.html', '_blank');
+    window.location.href = './conditions';
   });
 }
+
