@@ -341,19 +341,28 @@ main {
   background-color: var(--button-hover-bg);
 }
 
-.footer-legal {
+.footer-bar {
   position: fixed;
   bottom: 10px;
-  left: 10px;
+  left: 0;
+  width: 100%;
+  padding: 0 20px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
   font-size: 0.9rem;
   z-index: 999;
+  pointer-events: none;
 }
 
-.footer-legal button {
+.footer-bar span,
+.footer-bar button {
+  pointer-events: auto;
+}
+
+.footer-bar button {
   padding: 5px 10px;
   font-size: 0.9rem;
   cursor: pointer;
 }
+
