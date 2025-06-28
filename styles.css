@@ -337,32 +337,5 @@ main {
   z-index: 999;
 }
 
-.footer-bar {
-  position: fixed;
-  bottom: 15px;
-  left: 0;
-  right: 0;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  box-sizing: border-box;
-  z-index: 1000;
-  pointer-events: none;
-}
-
-.footer-bar span {
-  color: var(--text-color);
-  font-size: 0.9rem;
-  user-select: none;
-  pointer-events: auto;
-  margin-left: 0;
-}
-
-.footer-bar .footer-button {
-  pointer-events: auto;
-}
 
 
