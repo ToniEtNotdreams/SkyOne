@@ -28,24 +28,32 @@
   </div>
 </header>
 
-<main>
-  <section class="jouer">
-    <h1>Rejoins SkyOne !</h1>
-    <p style="text-align:center; margin: 20px 0; font-size: 1.1rem;">
-      Serveur disponible uniquement sur <strong>Java Edition 1.21.4+</strong><br>
-      IP : <strong>play.skyonefr.fr</strong>
-    </p>
+<main style="background: url('images/screenshot.png') no-repeat center center / cover; height: calc(100vh - 60px); padding: 40px 20px 0 20px; display: flex; flex-direction: column; align-items: center; color: white; text-shadow: 0 0 8px black;">
 
-    <div class="buttons-container">
-  <button onclick="window.location.href='https://discord.com/channels/1312519816044740648/1339516132683419649';" aria-label="Télécharger le modpack">
-    📦 Télécharger le modpack (optionnel)
-  </button>
+  <h1 style="font-size: clamp(2rem, 6vw, 3rem); margin-bottom: 10px; text-align: center;">
+    Viens jouer sur SkyOne
+  </h1>
 
-  <button id="copyIP" data-ip="play.skyonefr.fr" aria-label="Copier l’adresse IP">
-    📋 Copier l’IP
-  </button>
-</div>
+  <p style="text-align:center; margin: 20px 0; font-size: 1.1rem; max-width: 400px;">
+    Serveur disponible uniquement sur <strong>Java Edition 1.21.4+</strong><br>
+    IP : <strong>play.skyonefr.fr</strong>
+  </p>
 
+  <div class="buttons-container" style="justify-content: center; gap: 20px; flex-wrap: wrap; max-width: 500px;">
+    <button onclick="window.location.href='https://discord.com/channels/1312519816044740648/1339516132683419649';" aria-label="Télécharger le modpack">
+      📦 Télécharger le modpack (optionnel)
+    </button>
+
+    <button id="copyIP" data-ip="play.skyonefr.fr" aria-label="Copier l’adresse IP">
+      📋 Copier l’IP
+    </button>
+
+    <button onclick="window.location.href='https://shop.skyone.fr';" aria-label="Boutique SkyOne">
+      🛒 Shop
+    </button>
+  </div>
+
+</main>
 
 <script src="app.js"></script>
 
