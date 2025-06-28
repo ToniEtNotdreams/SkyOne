@@ -1,9 +1,7 @@
 const toggleThemeButton = document.getElementById('toggleTheme');
 
 function applyTheme(theme) {
-  // Ajout de transition sur le root pour background et couleur
   document.documentElement.style.transition = 'background-color 0.5s ease, color 0.5s ease';
-
   document.documentElement.setAttribute('data-theme', theme);
   toggleThemeButton.textContent = theme === 'dark' ? '☀️' : '🌙';
   localStorage.setItem('theme', theme);
@@ -22,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (savedTheme) {
     applyTheme(savedTheme);
   } else {
-    applySystemTheme();
+    applySystemTheme(); // utilise la préférence navigateur si rien en localStorage
   }
 });
 
@@ -31,6 +29,7 @@ toggleThemeButton.addEventListener('click', () => {
   applyTheme(current === 'dark' ? 'light' : 'dark');
 });
 
+// bouton copier IP
 const copyBtn = document.getElementById('copyIP');
 if (copyBtn) {
   copyBtn.addEventListener('click', function() {
@@ -39,4 +38,4 @@ if (copyBtn) {
       alert("IP copiée : " + ip);
     });
   });
-}
+});
