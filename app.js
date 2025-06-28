@@ -21,9 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (savedTheme) {
     applyTheme(savedTheme);
   } else {
-    // Par défaut sombre, sinon préférence navigateur
     applySystemTheme();
   }
+
+  // On met à jour le bouton selon le thème initial
+  const current = document.documentElement.getAttribute('data-theme');
+  toggleThemeButton.textContent = current === 'dark' ? '☀️' : '🌙';
 });
 
 toggleThemeButton.addEventListener('click', () => {
@@ -31,7 +34,6 @@ toggleThemeButton.addEventListener('click', () => {
   applyTheme(current === 'dark' ? 'light' : 'dark');
 });
 
-// Copier l'IP si le bouton est présent
 const copyBtn = document.getElementById('copyIP');
 if (copyBtn) {
   copyBtn.addEventListener('click', function() {
