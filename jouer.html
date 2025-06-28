@@ -61,6 +61,11 @@
   <a href="./conditions"><button id="legalButton" aria-label="Conditions d'utilisation">Conditions d'utilisation</button></a>
 </div>
 
+<div class="footer-bar">
+  <span>&copy; 2025 SkyOne</span>
+  <a href="./conditions" id="legalButton" aria-label="Conditions d'utilisation">Conditions d'utilisation</a>
+</div>
+
 <script>
 document.getElementById("copyIP").addEventListener("click", function() {
   const ip = this.getAttribute("data-ip");
@@ -69,6 +74,7 @@ document.getElementById("copyIP").addEventListener("click", function() {
     .catch(err => alert("Erreur lors de la copie : " + err));
 });
 </script>
-
+<script src="app.js"></script>
 </body>
 </html>
+
