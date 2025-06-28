@@ -17,10 +17,12 @@ function applySystemTheme() {
 
 document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme');
+
   if (savedTheme) {
     applyTheme(savedTheme);
   } else {
-    applySystemTheme(); // utilise la préférence navigateur si rien en localStorage
+    // Par défaut sombre, sinon préférence navigateur
+    applySystemTheme();
   }
 });
 
@@ -29,7 +31,7 @@ toggleThemeButton.addEventListener('click', () => {
   applyTheme(current === 'dark' ? 'light' : 'dark');
 });
 
-// bouton copier IP
+// Copier l'IP si le bouton est présent
 const copyBtn = document.getElementById('copyIP');
 if (copyBtn) {
   copyBtn.addEventListener('click', function() {
