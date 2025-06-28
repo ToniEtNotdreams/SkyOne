@@ -324,7 +324,7 @@ main {
 .legal-btn {
   position: fixed;
   bottom: 15px;
-  left: 15px;
+  right: 15px;
   background-color: var(--button-bg);
   color: var(--button-text);
   border: none;
