@@ -353,47 +353,16 @@ main {
   pointer-events: none;
 }
 
-.footer-bar {
-  position: fixed;
-  bottom: 15px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  box-sizing: border-box;
-  z-index: 1000;
-}
-
 .footer-bar span {
   color: var(--text-color);
   font-size: 0.9rem;
   user-select: none;
+  pointer-events: auto;
+  margin-left: 0;
 }
 
 .footer-bar .footer-button {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  border: none;
-  padding: 14px 28px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 12px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,204,255,0.5);
-  transition: background-color 0.3s, transform 0.2s;
-  min-width: 200px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.footer-bar .footer-button:hover {
-  background-color: var(--button-hover-bg);
-  transform: translateY(-2px);
+  pointer-events: auto;
 }
 
 
