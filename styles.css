@@ -66,7 +66,7 @@ header {
 .header-container {
   position: relative;
   display: flex;
-  justify-content: space-between;  /* espace logo / nav / controls */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: 1200px;
@@ -77,7 +77,7 @@ header {
 }
 
 .logo {
-  position: relative;  /* plus absolu */
+  position: relative;
   max-height: 50px;
   max-width: 120px;
   user-select: none;
@@ -108,8 +108,8 @@ nav {
   gap: 15px;
   flex-wrap: nowrap;
   justify-content: center;
-  flex-grow: 1;               /* nav prend toute la place dispo */
-  overflow-x: auto;          /* scroll si trop large */
+  flex-grow: 1;
+  overflow-x: auto;
 }
 
 nav a {
@@ -128,7 +128,7 @@ nav a:hover {
 }
 
 .right-controls {
-  position: relative;       /* plus absolu */
+  position: relative;
   flex-shrink: 0;
 }
 
@@ -156,22 +156,30 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 40px 20px 0 20px; /* padding horizontal ajouté */
+  padding: 40px 20px 0;
   color: white;
   text-shadow: 0 0 8px black;
 
-  white-space: nowrap;
   font-size: clamp(1.5rem, 6vw, 3rem);
   max-width: 100%;
   box-sizing: border-box;
 
   font-weight: 700;
   user-select: none;
-  overflow: hidden;
-  text-overflow: ellipsis;
+
+  overflow-x: visible;
+  white-space: nowrap;
+  text-overflow: clip;
 }
 
-
+.home-main h1 {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+  margin: 0;
+  padding: 0;
+}
 
 .buttons-container {
   display: flex;
