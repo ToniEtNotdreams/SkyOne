@@ -320,3 +320,21 @@ main {
   overflow: hidden;
   box-sizing: border-box;
 }
+
+.legal-btn {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 999;
+}
+
+.legal-btn:hover {
+  background-color: var(--button-hover-bg);
+}
