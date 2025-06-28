@@ -64,27 +64,24 @@ header {
 }
 
 .header-container {
-  padding-left: 140px;
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;  /* espace logo / nav / controls */
   align-items: center;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  gap: 40px;
-  flex-wrap: wrap;
-  padding-right: 10px;
+  padding: 0 20px;
+  gap: 20px;
+  flex-wrap: nowrap;
 }
 
 .logo {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative;  /* plus absolu */
   max-height: 50px;
   max-width: 120px;
   user-select: none;
+  flex-shrink: 0;
 }
 
 .logo img {
@@ -109,8 +106,10 @@ header {
 nav {
   display: flex;
   gap: 15px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
+  flex-grow: 1;               /* nav prend toute la place dispo */
+  overflow-x: auto;          /* scroll si trop large */
 }
 
 nav a {
@@ -121,6 +120,7 @@ nav a {
   padding: 6px 10px;
   border-radius: 6px;
   transition: background-color 0.3s;
+  white-space: nowrap;
 }
 
 nav a:hover {
@@ -128,8 +128,8 @@ nav a:hover {
 }
 
 .right-controls {
-  position: absolute;
-  right: 20px;
+  position: relative;       /* plus absolu */
+  flex-shrink: 0;
 }
 
 .right-controls button {
@@ -157,16 +157,18 @@ main {
   align-items: center;
   color: white;
   text-shadow: 0 0 8px black;
-  
-  white-space: nowrap;           
-  font-size: clamp(1.5rem, 6vw, 3rem); 
-  
+
+  white-space: nowrap;
+  font-size: clamp(1.5rem, 6vw, 3rem);
+  max-width: 90vw;
+  padding: 0 10px;
+  box-sizing: border-box;
+
   font-weight: 700;
   user-select: none;
   overflow: hidden;
-  text-overflow: ellipsis;         
+  text-overflow: ellipsis;
 }
-
 
 .buttons-container {
   display: flex;
