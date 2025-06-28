@@ -55,11 +55,20 @@
   </div>
 
 </main>
-  
+
 <div class="footer-bar">
   <span>&copy; 2025 SkyOne</span>
   <a href="./conditions"><button id="legalButton" aria-label="Conditions d'utilisation">Conditions d'utilisation</button></a>
 </div>
 
+<script>
+document.getElementById("copyIP").addEventListener("click", function() {
+  const ip = this.getAttribute("data-ip");
+  navigator.clipboard.writeText(ip)
+    .then(() => alert("IP copiée dans le presse-papier : " + ip))
+    .catch(err => alert("Erreur lors de la copie : " + err));
+});
+</script>
 
+</body>
 </html>
