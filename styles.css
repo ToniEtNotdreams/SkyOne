@@ -10,11 +10,11 @@
 
 [data-theme="light"] {
   --bg-color: #fff;
-  --text-color: ##000;
+  --text-color: #000;
   --nav-bg: #FAFAFA;
-  --nav-text: #fff;
+  --nav-text: #000;
   --button-bg: #00ccff;
-  --button-text: #fff;
+  --button-text: #000;
   --button-hover-bg: #0099cc;
 }
 
