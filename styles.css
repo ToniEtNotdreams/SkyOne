@@ -150,18 +150,20 @@ main {
   top: 60px;
   left: 0;
   right: 0;
-  bottom: 0;
-  background: url('images/screenshot.png') no-repeat center center/cover;
+  height: calc(100vh - 60px);
+  background: url('images/screenshot.png') no-repeat center center/contain;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start; /* texte en haut */
   align-items: center;
+  padding-top: 40px;
   color: white;
   text-shadow: 0 0 8px black;
 
   white-space: nowrap;
   font-size: clamp(1.5rem, 6vw, 3rem);
   max-width: 90vw;
-  padding: 0 10px;
+  margin: 0 auto;
   box-sizing: border-box;
 
   font-weight: 700;
@@ -169,6 +171,7 @@ main {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 
 .buttons-container {
   display: flex;
