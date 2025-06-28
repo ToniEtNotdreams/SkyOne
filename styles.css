@@ -127,20 +127,23 @@ main {
 }
 
 .home-main {
-  margin-top: 60px;
-  height: calc(100vh - 60px);
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: url('images/screenshot.png') no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   text-shadow: 0 0 8px black;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
   user-select: none;
-  text-align: center;
-  min-height: calc(100vh - 60px);
+  overflow: hidden;
 }
+
 
 .buttons-container {
   display: flex;
