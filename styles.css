@@ -301,3 +301,21 @@ main {
   font-size: 1rem;
   font-weight: 600;
 }
+
+.jouer-main {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('images/screenshot-1.png') no-repeat center center / cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 20px 0 20px;
+  color: white;
+  text-shadow: 0 0 8px black;
+  overflow: hidden;
+  box-sizing: border-box;
+}
