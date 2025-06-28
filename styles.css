@@ -1,4 +1,14 @@
 :root {
+  --bg-color: #212121;
+  --text-color: #fff;
+  --nav-bg: #181818;
+  --nav-text: #fff;
+  --button-bg: #0099cc;
+  --button-text: #fff;
+  --button-hover-bg: #007799;
+}
+
+[data-theme="light"] {
   --bg-color: #fff;
   --text-color: #000;
   --nav-bg: #181818;
@@ -8,15 +18,6 @@
   --button-hover-bg: #0099cc;
 }
 
-[data-theme="dark"] {
-  --bg-color: #212121;
-  --text-color: #fff;
-  --nav-bg: #181818;
-  --nav-text: #fff;
-  --button-bg: #0099cc;
-  --button-text: #fff;
-  --button-hover-bg: #007799;
-}
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
