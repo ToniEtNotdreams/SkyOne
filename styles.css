@@ -345,24 +345,31 @@ main {
   position: fixed;
   bottom: 10px;
   left: 0;
-  width: 100%;
+  right: 0;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 0.9rem;
   z-index: 999;
-  pointer-events: none;
 }
 
-.footer-bar span,
-.footer-bar button {
-  pointer-events: auto;
+.footer-bar span {
+  color: var(--text-color);
 }
 
 .footer-bar button {
-  padding: 5px 10px;
+  padding: 5px 12px;
+  background-color: var(--button-bg, #333);
+  color: var(--text-color, #fff);
+  border: none;
+  border-radius: 5px;
   font-size: 0.9rem;
   cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.footer-bar button:hover {
+  background-color: var(--button-hover, #444);
 }
 
