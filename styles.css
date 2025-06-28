@@ -340,3 +340,20 @@ main {
 .legal-btn:hover {
   background-color: var(--button-hover-bg);
 }
+
+.footer-legal {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  z-index: 999;
+}
+
+.footer-legal button {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
