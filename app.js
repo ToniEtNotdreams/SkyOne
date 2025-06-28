@@ -38,3 +38,11 @@ document.getElementById('copyIP').addEventListener('click', function() {
     alert("IP copiée : " + ip);
   });
 });
+
+
+const legalButton = document.getElementById('legalButton');
+if (legalButton) {
+  legalButton.addEventListener('click', () => {
+    window.open('conditions.html', '_blank');
+  });
+}
