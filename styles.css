@@ -347,7 +347,7 @@ body {
 
 .footer {
   position: fixed;
-  bottom: 15px;
+  bottom: 10px;
   left: 0;
   right: 0;
   display: flex;
@@ -364,7 +364,7 @@ body {
   background-color: #00ccff;
   color: #fff;
   border: none;
-  padding: 10px 18px;
+  padding: 8px 18px;
   font-size: 1rem;
   border-radius: 10px;
   cursor: pointer;
