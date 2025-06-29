@@ -29,42 +29,56 @@ window.onload = () => {
   ];
 
   const scroller = document.getElementById("scroller");
-  const container = document.getElementById("scroller-container");
-  let index = 0;
+  const wrapper = document.getElementById("scroller-wrapper");
+  const curtainWidth = 50;
 
-  const pauseDuration = 3000; // pause 3s
-  const moveDuration = 4000;  // durée glissement
+  let index = 0;
+  const pauseDuration = 3000;
+  const moveDuration = 4000;
 
   function showMessage() {
     scroller.textContent = messages[index];
     scroller.style.transition = "none";
-    scroller.style.right = `-${scroller.offsetWidth}px`; // complètement caché à droite
-    scroller.style.opacity = "1";
 
-    // Après un petit délai (pour mise à jour style)
-    setTimeout(() => {
-      // glisser jusqu'à 50px depuis le bord droit (visible)
-      scroller.style.transition = `right ${moveDuration}ms linear`;
-      scroller.style.right = `50px`;
-    }, 50);
+    const textWidth = scroller.offsetWidth;
+    const containerWidth = wrapper.offsetWidth;
 
-    // Après le glissement vers la droite (entrée visible)
+    // Position initiale : complètement caché derrière rideau droit (à droite)
+    scroller.style.right = `-${textWidth}px`;
+    scroller.style.left = "auto";
+
+    // Forcer recalcul style
+    void scroller.offsetWidth;
+
+    // Entrée : glisse de right = -textWidth jusqu’à right = curtainWidth (50px)
+    scroller.style.transition = `right ${moveDuration}ms linear`;
+    scroller.style.right = `${curtainWidth}px`;
+
     setTimeout(() => {
-      // pause 3s avant de repartir
+      // Pause 3s à droite (visible)
       setTimeout(() => {
-        // repartir vers la gauche jusqu'à - (largeur du texte + 50px) (caché à gauche)
-        scroller.style.transition = `right ${moveDuration}ms linear`;
-        scroller.style.right = `${container.offsetWidth - scroller.offsetWidth - 50}px`;
+        // Sortie vers la gauche : on passe de right = 50px à left = -textWidth - curtainWidth
+        scroller.style.transition = "none";
+        scroller.style.right = "auto";
+        scroller.style.left = `${-textWidth - curtainWidth}px`;
+
+        // Forcer recalcul style
+        void scroller.offsetWidth;
+
+        // Animation sortie : glisse de left = -textWidth - curtainWidth à left = containerWidth - curtainWidth
+        scroller.style.transition = `left ${moveDuration}ms linear`;
+        scroller.style.left = `${containerWidth - curtainWidth}px`;
       }, pauseDuration);
-    }, moveDuration + 50);
+    }, moveDuration);
   }
 
+  // Event transitionend pour alterner entre droite et gauche
   scroller.addEventListener("transitionend", () => {
-    // Quand le texte disparait complètement à gauche, changer le message
-    if (parseInt(scroller.style.right) > container.offsetWidth / 2) return; // ignore fin entrée
-
-    index = (index + 1) % messages.length;
-    showMessage();
+    // Detecte si on vient de finir sortie à gauche (left >= containerWidth - curtainWidth)
+    if (scroller.style.left !== "auto" && parseInt(scroller.style.left) >= wrapper.offsetWidth - curtainWidth) {
+      index = (index + 1) % messages.length;
+      showMessage();
+    }
   });
 
   showMessage();
