@@ -34,11 +34,11 @@ window.onload = () => {
   function showMessage() {
     scroller.textContent = messages[index];
     scroller.style.transition = "none";
-    scroller.style.transform = "translateX(100%)";
+    scroller.style.transform = "translateX(120%)";  // spawn à droite
 
     requestAnimationFrame(() => {
-      scroller.style.transition = "transform 2.5s linear";
-      scroller.style.transform = "translateX(0%)";
+      scroller.style.transition = "transform 2s linear";
+      scroller.style.transform = "translateX(0%)";  // arrive au centre
 
       scroller.addEventListener("transitionend", onStop, { once: true });
     });
@@ -46,8 +46,8 @@ window.onload = () => {
 
   function onStop() {
     setTimeout(() => {
-      scroller.style.transition = "transform 2.5s linear";
-      scroller.style.transform = "translateX(-100%)";
+      scroller.style.transition = "transform 2s linear";
+      scroller.style.transform = "translateX(-120%)";  // part à gauche
 
       scroller.addEventListener("transitionend", () => {
         index = (index + 1) % messages.length;
