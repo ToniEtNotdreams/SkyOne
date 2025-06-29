@@ -19,39 +19,3 @@
     const currentTheme = htmlElement.getAttribute("data-theme");
     themeToggle.textContent = currentTheme === "dark" ? "🌙" : "☀️";
   }
-
-window.onload = () => {
-  const messages = [
-    "Rejoins-nous vite !",
-    "Plugins exclusifs.",
-    "Évènements et tournois chaque semaine.",
-    "Notre Discord t’attend !"
-  ];
-
-  const scroller = document.getElementById("scroller");
-  let index = 0;
-
-  function defileMessage() {
-    scroller.textContent = messages[index];
-    scroller.style.transition = "none";
-    scroller.style.transform = "translateX(50px)";
-
-    requestAnimationFrame(() => {
-      scroller.style.transition = "transform 1.5s linear";
-      scroller.style.transform = "translateX(0)";
-    });
-
-    scroller.addEventListener("transitionend", () => {
-      setTimeout(() => {
-        scroller.style.transition = "transform 1.5s linear";
-        scroller.style.transform = "translateX(-50px)";
-        scroller.addEventListener("transitionend", () => {
-          index = (index + 1) % messages.length;
-          defileMessage();
-        }, { once: true });
-      }, 2000);
-    }, { once: true });
-  }
-
-  defileMessage();
-};
