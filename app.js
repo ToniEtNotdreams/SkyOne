@@ -1,4 +1,3 @@
-window.onload = () => {
   // Thème
   const themeToggle = document.getElementById("toggleTheme");
   const htmlElement = document.documentElement;
@@ -21,7 +20,7 @@ window.onload = () => {
     themeToggle.textContent = currentTheme === "dark" ? "🌙" : "☀️";
   }
 
-  // Scroller
+window.onload = () => {
   const messages = [
     "Rejoins-nous vite !",
     "Plugins exclusifs.",
@@ -35,18 +34,26 @@ window.onload = () => {
   function showMessage() {
     scroller.textContent = messages[index];
     scroller.style.transition = "none";
-    scroller.style.transform = "translateX(100%)"; // start à droite
+    scroller.style.transform = "translateX(50%)"; // start milieu à droite
+    scroller.style.opacity = "1";
 
-    requestAnimationFrame(() => {
+    // Laisser 3s visible au milieu à droite avant de partir
+    setTimeout(() => {
       scroller.style.transition = "transform 5s linear";
-      scroller.style.transform = "translateX(-100%)"; // glisse à gauche
-    });
+      scroller.style.transform = "translateX(-50%)"; // fin milieu à gauche
+    }, 3000);
+  }
 
-    scroller.addEventListener("transitionend", () => {
+  scroller.addEventListener("transitionend", () => {
+    // Après glissement, pause 3s à gauche, puis changer message
+    scroller.style.transition = "none";
+    scroller.style.transform = "translateX(-50%)";
+    setTimeout(() => {
       index = (index + 1) % messages.length;
       showMessage();
-    }, { once: true });
-  }
+    }, 3000);
+  });
 
   showMessage();
 };
+
