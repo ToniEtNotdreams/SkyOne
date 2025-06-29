@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>SkyOne | Voter</title>
+  <link rel="icon" type="image/png" href="images/logo-32x.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <a href="./" aria-label="Accueil SkyOne">
+        <img src="images/skyone-logo.png" alt="SkyOne Logo" />
+      </a>
+    </div>
+
+    <nav>
+      <a href="./">Accueil</a>
+      <a href="./reseaux">Réseaux</a>
+      <a href="./jouer">Jouer</a>
+      <a href="./vote">Voter</a>
+    </nav>
+
+    <div class="right-controls">
+      <button id="toggleTheme" aria-label="Changer thème">🌙</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="reseaux">
+    <h1>Nos Réseaux</h1>
+
+    <div class="reseaux-container">
+      <div class="reseau-card" onclick="window.open('https://serveur-prive.net/minecraft/httpsskyonefrgithubio/vote', '_blank')">
+        <img src="images/serveur-prive.png" alt="Sereur privé">
+        <p>Serveur privé</p>
+      </div>
+
+      <div class="reseau-card" onclick="window.open('https://www.serveursminecraft.org/serveur/7363/', '_blank')">
+        <img src="images/minecraf-servers.png" alt="Minecraft servers">
+        <p>Minecraft servers</p>
+      </div>
+
+    </div>
+  </section>
+</main>
+  
+  <div class="footer">
+    <span>© 2025 SkyOne</span>
+    <button onclick="window.location.href='./conditions'">Conditions</button>
+  </div>
+
+
+
+<script src="app.js"></script>
+</body>
+</html>
+
+
+</html>
