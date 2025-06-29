@@ -34,15 +34,15 @@ window.onload = () => {
   function defileMessage() {
     scroller.textContent = messages[index];
     scroller.style.transition = "none";
+    scroller.style.left = "50%";
     scroller.style.transform = "translateX(50px)";
 
-    // Lance vers le centre (0)
+    // vers centre (0)
     requestAnimationFrame(() => {
       scroller.style.transition = "transform 1.5s linear";
       scroller.style.transform = "translateX(0)";
     });
 
-    // Stop 2s au centre, puis vers -50px
     scroller.addEventListener("transitionend", () => {
       setTimeout(() => {
         scroller.style.transition = "transform 1.5s linear";
@@ -53,7 +53,7 @@ window.onload = () => {
           defileMessage();
         }, { once: true });
 
-      }, 2000); // pause 2s
+      }, 2000);
     }, { once: true });
   }
 
