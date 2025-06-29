@@ -34,25 +34,27 @@ window.onload = () => {
   function defileMessage() {
     scroller.textContent = messages[index];
     scroller.style.transition = "none";
-    scroller.style.transform = "translateX(120%)";
+    scroller.style.transform = "translateX(50px)";
 
+    // Lance vers le centre (0)
     requestAnimationFrame(() => {
-      scroller.style.transition = "transform 2s linear";
-      scroller.style.transform = "translateX(0%)";
-
-      scroller.addEventListener("transitionend", () => {
-        setTimeout(() => {
-          scroller.style.transition = "transform 2s linear";
-          scroller.style.transform = "translateX(-120%)";
-
-          scroller.addEventListener("transitionend", () => {
-            index = (index + 1) % messages.length;
-            defileMessage();
-          }, { once: true });
-
-        }, 2000); // pause 2s au centre
-      }, { once: true });
+      scroller.style.transition = "transform 1.5s linear";
+      scroller.style.transform = "translateX(0)";
     });
+
+    // Stop 2s au centre, puis vers -50px
+    scroller.addEventListener("transitionend", () => {
+      setTimeout(() => {
+        scroller.style.transition = "transform 1.5s linear";
+        scroller.style.transform = "translateX(-50px)";
+
+        scroller.addEventListener("transitionend", () => {
+          index = (index + 1) % messages.length;
+          defileMessage();
+        }, { once: true });
+
+      }, 2000); // pause 2s
+    }, { once: true });
   }
 
   defileMessage();
