@@ -24,37 +24,36 @@ window.onload = () => {
   const messages = [
     "Rejoins-nous vite !",
     "Plugins exclusifs.",
-    "Évènements hebdomadaires et tournois.",
-    "Rejoignez notre Discord pour plus d'infos."
+    "Évènements et tournois chaque semaine.",
+    "Notre Discord t’attend !"
   ];
 
   const scroller = document.getElementById("scroller");
   let index = 0;
 
-  function showMessage() {
+  function defileMessage() {
     scroller.textContent = messages[index];
     scroller.style.transition = "none";
-    scroller.style.transform = "translateX(120%)";  // spawn à droite
+    scroller.style.transform = "translateX(120%)";
 
     requestAnimationFrame(() => {
       scroller.style.transition = "transform 2s linear";
-      scroller.style.transform = "translateX(0%)";  // arrive au centre
+      scroller.style.transform = "translateX(0%)";
 
-      scroller.addEventListener("transitionend", onStop, { once: true });
+      scroller.addEventListener("transitionend", () => {
+        setTimeout(() => {
+          scroller.style.transition = "transform 2s linear";
+          scroller.style.transform = "translateX(-120%)";
+
+          scroller.addEventListener("transitionend", () => {
+            index = (index + 1) % messages.length;
+            defileMessage();
+          }, { once: true });
+
+        }, 2000); // pause 2s au centre
+      }, { once: true });
     });
   }
 
-  function onStop() {
-    setTimeout(() => {
-      scroller.style.transition = "transform 2s linear";
-      scroller.style.transform = "translateX(-120%)";  // part à gauche
-
-      scroller.addEventListener("transitionend", () => {
-        index = (index + 1) % messages.length;
-        showMessage();
-      }, { once: true });
-    }, 2000);
-  }
-
-  showMessage();
+  defileMessage();
 };
