@@ -378,9 +378,19 @@ body {
 #scroller-wrapper {
   position: relative;
   width: 100%;
-  height: 1.5em;
+  height: 1.2em; /* un peu plus petit */
   margin-top: 10px;
   overflow: hidden;
-  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  /* Fondus plus serrés : on passe de 10%/90% à 5%/95% */
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+#scroller {
+  white-space: nowrap;
+  font-size: 1rem; /* texte plus petit */
+  color: #00ccff;
+  position: relative;
+  display: inline-block;
+  will-change: transform;
 }
