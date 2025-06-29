@@ -6,6 +6,9 @@
   --button-bg: #0099cc;
   --button-text: #fff;
   --button-hover-bg: #007799;
+  --main-text-shadow: 0 0 8px black;
+  --footer-bg: #0a0a0a;
+  --footer-text: #fff;
 }
 
 [data-theme="light"] {
@@ -16,7 +19,11 @@
   --button-bg: #00ccff;
   --button-text: #000;
   --button-hover-bg: #0099cc;
+  --main-text-shadow: 0 0 8px #ddd;
+  --footer-bg: #f0f0f0;
+  --footer-text: #000;
 }
+
 
 
 @media (prefers-color-scheme: dark) {
@@ -158,8 +165,8 @@ main {
   justify-content: flex-start;
   align-items: center;
   padding: 40px 20px 0;
-  color: white;
-  text-shadow: 0 0 8px black;
+  color: var(--text-color);
+  text-shadow: var(--main-text-shadow);
 
   font-size: clamp(1.5rem, 6vw, 3rem);
   max-width: 100%;
@@ -317,8 +324,8 @@ main {
   justify-content: flex-start;
   align-items: center;
   padding: 40px 20px 0 20px;
-  color: white;
-  text-shadow: 0 0 8px black;
+  color: var(--text-color);
+  text-shadow: var(--main-text-shadow);
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -361,8 +368,8 @@ body {
 }
 
 .footer button {
-  background-color: #00ccff;
-  color: #fff;
+  background-color: var(--button-bg);
+  color: var(--button-text);
   border: none;
   padding: 8px 18px;
   font-size: 1rem;
