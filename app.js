@@ -34,10 +34,8 @@ window.onload = () => {
   function defileMessage() {
     scroller.textContent = messages[index];
     scroller.style.transition = "none";
-    scroller.style.left = "50%";
     scroller.style.transform = "translateX(50px)";
 
-    // vers centre (0)
     requestAnimationFrame(() => {
       scroller.style.transition = "transform 1.5s linear";
       scroller.style.transform = "translateX(0)";
@@ -47,12 +45,10 @@ window.onload = () => {
       setTimeout(() => {
         scroller.style.transition = "transform 1.5s linear";
         scroller.style.transform = "translateX(-50px)";
-
         scroller.addEventListener("transitionend", () => {
           index = (index + 1) % messages.length;
           defileMessage();
         }, { once: true });
-
       }, 2000);
     }, { once: true });
   }
